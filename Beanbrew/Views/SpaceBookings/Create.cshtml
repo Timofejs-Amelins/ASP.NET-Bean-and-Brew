@@ -1,0 +1,55 @@
+﻿<!--connect to the SpaceBooking table-->
+@model Beanbrew.Models.SpaceBooking
+
+<!--set the title of the page to "Create" using the Title value of ViewData-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--these headings there are big and tell user this page makes a booking-->
+<h1>Create</h1>
+
+<h4>SpaceBooking</h4>
+
+<!--the hr tag then provides whitespace between the headings and form-->
+<hr />
+
+<!--I used Bootstrap to program the form to take up 33% of the page width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--I have implemented a div with Bootstrap for invalid data-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--this form-group is for entering a foreign key into database-->
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+
+            <!--this is the foreign Restaurant ID key also-->
+            <div class="form-group">
+                <label asp-for="RestaurantId" class="control-label"></label>
+                <select asp-for="RestaurantId" class ="form-control" asp-items="ViewBag.RestaurantId"></select>
+            </div>
+
+            <!--the time slot is a datetime field for entering a time-->
+            <div class="form-group">
+                <label asp-for="TimeSlot" class="control-label"></label>
+                <input asp-for="TimeSlot" class="form-control" />
+                <span asp-validation-for="TimeSlot" class="text-danger"></span>
+            </div>
+
+            <!--this button makes the booking in the SpaceBooking table-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this link takes the user back to see all space booking data in table-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

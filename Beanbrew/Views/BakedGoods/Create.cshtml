@@ -1,0 +1,61 @@
+﻿<!--connect with the BakedGood model for creating a baked good in database-->
+@model Beanbrew.Models.BakedGood
+
+<!--like other forms that create data, give this page the "Create" title-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--the headings tell the user these forms are for creating a baked good-->
+<h1>Create</h1>
+
+<h4>BakedGood</h4>
+<!--like all webforms that work with the database, the hr makes whitespace-->
+<hr />
+
+<!--the form takes up 33% of the page width as usual (col-md-4) class-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+
+            <!--validation error messages can appar above the form fields-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--this form-group is where the user enters the bakery name-->
+            <div class="form-group">
+                <label asp-for="BakedGoodName" class="control-label"></label>
+                <input asp-for="BakedGoodName" class="form-control" />
+                <span asp-validation-for="BakedGoodName" class="text-danger"></span>
+            </div>
+
+            <!--this form-group is where the type of baked good is entered-->
+            <div class="form-group">
+                <label asp-for="BakedGoodType" class="control-label"></label>
+                <input asp-for="BakedGoodType" class="form-control" />
+                <span asp-validation-for="BakedGoodType" class="text-danger"></span>
+            </div>
+
+            <!--the bottom field is the price field also with "form-group"-->
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!--this "form-group" houses the submit btn that makes bakery-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this button has the functionality of taking user back to data overview-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--we need to import scripts which we are using for easy validation-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

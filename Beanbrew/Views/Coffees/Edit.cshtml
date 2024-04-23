@@ -1,0 +1,58 @@
+﻿<!--this connects to the Coffee model for contr access to edit coffee data-->
+@model Beanbrew.Models.Coffee
+
+<!--title the page "Edit" to tell user this is for editing a coffee-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--heading to tell user this page updates a row-->
+<h1>Edit</h1>
+
+<!--in here the user is editing coffee data and submitting those edits-->
+<h4>Coffee</h4>
+
+<!--we are providing some spacing between heading and form to make it nice-->
+<hr />
+
+<!--standard and consistant Bootstrap form design with 33% width taken-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <!--some validation error messages will show up at the top-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--the coffee ID is auto-increment, so the coffee ID is hidden-->
+            <input type="hidden" asp-for="CoffeeId" />
+
+            <!--the coffee name is a text input field and can be anything-->
+            <div class="form-group">
+                <label asp-for="CoffeeName" class="control-label"></label>
+                <input asp-for="CoffeeName" class="form-control" />
+                <span asp-validation-for="CoffeeName" class="text-danger"></span>
+            </div>
+
+            <!--the user also has the choice of changing the price-->
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+
+            <!--it just takes one more click to save the data-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--if the user changes their mind they can always go back to see overview-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--we must then render this _ValidationScriptsPartial.cshtml file-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

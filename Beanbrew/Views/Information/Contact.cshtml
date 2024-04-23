@@ -1,0 +1,32 @@
+﻿<!--give that page a title-->
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<!--welcome the user to the contact page-->
+<h1>Welcome to Bean and Brew Contact!</h1>
+
+<!--put social media links in a table for a responsive and neat layout-->
+<table>
+    <tr>
+        <td>
+            <a href="https://www.facebook.com/tima.amelins.1">
+                <img src="~/img/facebook.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://twitter.com/A95573Amelins">
+                <img src="~/img/twitter.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://www.youtube.com/channel/UCxRate9u6-rxbZfAxZ4ZjtA">
+                <img src="~/img/utube.png" width="50%" />
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!--this button takes the user to the webform for creatinsg a message-->
+<a asp-controller="Contacts" asp-action="Create" class="btn btn-primary">Send message</a>
+

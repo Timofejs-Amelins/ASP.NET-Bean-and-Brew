@@ -1,0 +1,57 @@
+﻿<!--connect to the Contact model-->
+@model Beanbrew.Models.Contact
+
+<!--tell user this page is for creating data-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--the headings also tell the user this page is for creating data-->
+<h1>Create</h1>
+
+<h4>Contact</h4>
+
+<!--provide whitespace between the headings and the form-->
+<hr />
+
+<!--this form takes up 33% of the page width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--this div provides invalid data output messages to user-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--this field is where the user can enter their email-->
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!--this field is where the user can enter the subject-->
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+
+            <!--this field is where the user can enter the message-->
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+
+            <!--this button creates the contact-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this a tag allows the user to go back to the table page to see all data-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,32 @@
+﻿
+@*
+    the line below creates a form that will upload the file to the server
+*@
+
+@using(Html.BeginForm("Index", "Storage", FormMethod.Post, new {@enctype = "multipart/form-data" }))
+
+
+{
+    <!--content inside form with bold text heading for clarity to the user-->
+    <span>
+        <b>
+            File upload
+        </b>
+    </span>
+
+    <!--the heading and the rest of the form are on seperate lines-->
+    <br/>
+
+    <!--message telling the user whether file upload is successful is here-->
+    <span style="color: red; font-weight: bold">
+        @ViewBag.Message
+    </span>
+
+    <!--seperate the message, btn uploading file and input field-->
+    <br/>
+    <input type="file" name="userfile"/>
+    <br />
+    <p>
+    </p>
+    <input type="submit" value="upload" />
+}

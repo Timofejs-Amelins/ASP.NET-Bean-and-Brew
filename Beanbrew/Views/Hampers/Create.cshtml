@@ -1,0 +1,54 @@
+﻿<!--make use of the hamper model to connect to the Hamper table-->
+@model Beanbrew.Models.Hamper
+
+<!--set title to inform that this page inserts a new row-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--the headings below make the text bigger and inform user of page action-->
+<h1>Create</h1>
+
+<h4>Hamper</h4>
+
+<!--provide vertical separation between the form and the headings on top-->
+<hr />
+
+<!--I used Bootstrap to make the form take up 33% of the page's width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--display some validation error messages on the top of field-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <!--the Size is quantiative data that the user must enter-->
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+
+            <!--the user must also enter the colour field manually-->
+            <div class="form-group">
+                <label asp-for="Colour" class="control-label"></label>
+                <input asp-for="Colour" class="form-control" />
+                <span asp-validation-for="Colour" class="text-danger"></span>
+            </div>
+
+            <!--this submission button inserts a hamper into the database-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--there is the option for the user to go to Index page if what-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--render scripts that ASP.NET uses to provide client-side validation-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

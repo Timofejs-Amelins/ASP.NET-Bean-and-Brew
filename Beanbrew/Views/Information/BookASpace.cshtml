@@ -1,0 +1,81 @@
+﻿<!--set title-->
+@{
+    ViewData["Title"] = "BookASpace";
+}
+
+<!--heading that tells user what this page is about, supplying easy UX-->
+<h1>BookASpace</h1>
+
+
+<!--lay social media links in table with row as like other pages-->
+<table>
+    <tr>
+        <td>
+            <a href="https://www.facebook.com/tima.amelins.1">
+                <img src="~/img/facebook.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://twitter.com/A95573Amelins">
+                <img src="~/img/twitter.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://www.youtube.com/channel/UCxRate9u6-rxbZfAxZ4ZjtA">
+                <img src="~/img/utube.png" width="50%" />
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!--lay out the information about the 3 Bean and Brew branches in table-->
+<table>
+    <!--give each restaurant a heading-->
+    <tr>
+        <th>
+            Harrogate
+        </th>
+        <th>
+            Knaresborough
+        </th>
+        <th>
+            Leeds
+        </th>
+    </tr>
+    <!--information about the 3 restaurants, with brs for newlines-->
+    <tr>
+        <td>
+            Restaurant ID: 1<br />
+            Opening Times:<br />
+            Mon - Fri: 24h<br />
+            Saturday: 24h<br />
+            Sunday: 24h<br />
+        </td>
+        <td>
+            Restaurant ID: 2<br />
+            Opening Times:<br />
+            Mon - Fri: 24h<br />
+            Saturday: 24h<br />
+            Sunday: 24h<br />
+        </td>
+        <td>
+            Restaurant ID: 3<br />
+            Opening Times:<br />
+            Mon - Fri: 24h<br />
+            Saturday: 24h<br />
+            Sunday: 24h<br />
+        </td>
+    </tr>
+    <!--this row puts the button takung user to webform in the center-->
+    <tr>
+        <td>
+        </td>
+        <td>
+            <a asp-controller="SpaceBookings" asp-action="Create" class="btn btn-primary">
+                Book a space at one of our restaurants
+            </a>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BeanAndBrew</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style type="text/css">
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            margin-left: 20px;
+            text-align: justify;
+            font-size: medium;
+            font-family: 'Century Gothic';
+            color: honeydew;
+            font-weight: 500;
+        }
+
+        th {
+            font-family: "Century Gothic";
+            color: white;
+        }
+
+        body {
+            background-color: chocolate;
+        }
+
+        h1 {
+            font-family: 'Century Gothic';
+            font-weight: 800;
+            font-size: 30px;
+            color: lightseagreen;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 65px;
+            background-color: chocolate;
+            font-family: "roboto";
+            color: white;
+            top: 0;
+        }
+
+            .navbar ul {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .navbar li {
+                display: block;
+                float: left;
+                width: 100px;
+                text-align: center;
+                border-radius: 1.5em;
+                height: 30px;
+                line-height: 11px;
+                background-color: #7b5443;
+                margin-left: 5px;
+            }
+
+                .navbar li a {
+                    font-family: "Century Gothic";
+                    font-size: 12px;
+                    color: floralwhite;
+                    font-weight: 200;
+                }
+
+                .navbar li:hover {
+                    background-color: cadetblue;
+                    border: 1px solid white;
+                }
+
+
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            line-height: 60px; /* Vertically center the text there */
+        }
+
+    </style>
+</head>
+<!--style the body to overwrite the Bootstrap styles-->
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-success border-bottom box-shadow mb-3">
+            <div class="container">
+                <img src="~/img/logo.png" width="50px" />
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Information" asp-action="Index">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Information" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Information" asp-action="PreBookingLessons">Book Lesson</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Information" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Information" asp-action="BookASpace">Book a Space</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Customers" asp-action="ShowSearchForm">Search</a>
+                        </li>
+                        <!--<li class="nav-item">-->
+                        <!--<a class="nav-link text-white" asp-area="" asp-controller="Customers" asp-action="Create">Create Customer</a>-->
+                        <!--</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - designed by Timofejs Amelins with the suport of Emmanuel Oladipo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

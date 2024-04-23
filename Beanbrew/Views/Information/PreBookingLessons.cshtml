@@ -1,0 +1,141 @@
+﻿<!--title the pre booking lessons page-->
+@{
+    ViewData["Title"] = "PreBookingLessons";
+}
+<head>
+    <!-- this is internal CSS for styling the booking lesson order button-->
+    <style type="text/css">
+        button {
+            background-color: green;
+            border: 3px solid white;
+            border-radius: 10px;
+            color: white;
+            padding: 5px;
+            text-align: center
+        }
+    </style>
+</head>
+<!--welcome the user to the booking lessons page with big text due to h1-->
+<h1>Welcome to Bean and Brew Prebooking Lessons!</h1>
+
+<!--lay the social media links in one table to make them neat and organised-->
+<table>
+    <tr>
+        <td>
+            <a href="https://www.facebook.com/tima.amelins.1">
+                <img src="~/img/facebook.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://twitter.com/A95573Amelins">
+                <img src="~/img/twitter.png" width="50%" />
+            </a>
+        </td>
+        <td>
+            <a href="https://www.youtube.com/channel/UCxRate9u6-rxbZfAxZ4ZjtA">
+                <img src="~/img/utube.png" width="50%" />
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!--lay the content for the booking lessons page in another table-->
+<table>
+    <!--provide headings to descrbe what each column is about so user knows-->
+    <tr>
+        <th>
+            Baker
+        </th>
+        <th>
+            Baking Teacher
+        </th>
+        <th>
+            Leeds
+        </th>
+    </tr>
+    <!--the images of the baker, me the baking teacher and Leeds-->
+    <tr>
+        <td>
+            <img src="~/img/Baker at Baking Class.jpg" width="100%" />
+        </td>
+        <td>
+            <img src="~/img/Me.jpg" width="100%" />
+        </td>
+        <td>
+            <img src="~/img/Leeds.jpg" width="100%" />
+        </td>
+    </tr>
+    <!-- this table row provides information about me the teacher and Leeds-->
+    <tr>
+        <td>
+        </td>
+        <td>
+            Timofejs Amelins is the leader and sole member of baking lessons, with 6 days of experience cooking and especially specialises in baking safely and following baking recipes, to produce quality baked goods and reduce the risk of baking accidents. This is why we have a Food Hygiene Rating of 5 and why we never had sick staff, customers, or baking accidents and near misses. All of our bakers are trained to the highest possible baking safety standards and we take the health and safety of our restaurants very seriously. After learning to bake you have the offer of working with us, full time at a salary of £40,000 a year, so what are you waiting for? Start learning baking and you'll get hired in a couple months time!
+        </td>
+        <td>
+            Leeds is a city with so many things to see and do and contains the nice River Are. To the south of the River Are is the fascinating Royal Armouries Museum which houses a whole host of arms and artillery to see and learn about. Also across the river is the redeveloped industrial area around Call Lane, which has so many bars and music venues under beautifully converted railway arches that you will spend an entire year if you were to go to one bar/venue per day. Finally, to spend even more time, there is the Kirkgate Market with hundreds of indoor or outsoor stalls so come rain or shine there will always be something to try and buy.
+        </td>
+    </tr>
+</table>
+
+<!--this is the green button displaying the baking lesson booking form-->
+<button id="bookBakingLessonButton">
+    Pre book your baking lesson
+</button>
+
+<!--these forms contain the booking form and reciept on button clicks-->
+<div id="bakingLessonBookingForm">
+
+</div>
+
+<div id="bakingLessonBookingReciept">
+
+</div>
+<!--lay the opening times in a table underneath-->
+<table>
+    <tr>
+        <th>
+            OPENING TIMES:
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Mon: 24h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Tues: 24h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Wed: 24h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Thurs: 24h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Fri: 24h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Sat: 24h
+        </td>
+    <tr>
+        <td>
+            Sun: 24h
+        </td>
+    </tr>
+</table>
+
+<!--we are importing a script from an external javascript file at the end-->
+<script src="~/js/preBookingLessons.js" type="module">
+
+</script>
+

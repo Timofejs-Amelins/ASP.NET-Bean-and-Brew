@@ -1,0 +1,62 @@
+﻿<!--use the Contact model to provide contact data quickly and clearly-->
+@model Beanbrew.Models.Contact
+
+<!--set the title of this page to Edit to make clea-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--this heading tells the user this edits data, so users know page action-->
+<h1>Edit</h1>
+
+<!--this subheading tells the user this page works with contact data for UX-->
+
+<h4>Contact</h4>
+
+<!--this hr provides good whitespace between the headings and the webform-->
+<hr />
+
+<!--this row class structures the data into table for easy customisation-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <!--if any data is invalid tell the user here so the user knows-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--contact ID is hidden but necesssary to get right contact-->
+            <input type="hidden" asp-for="ContactID" />
+
+            <!--this form-group is where the user must enter their email-->
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!--this form-group is where the user must enter the subject-->
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+
+            <!--this is where the user must enter the actual message to say-->
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+
+            <!--this form-group button saves data on clicking beautiful btn-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this small link allows the user to go back to the table without saving-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,61 @@
+﻿<!--connect to the SpaceBooking model-->
+@model Beanbrew.Models.SpaceBooking
+
+<!--set the title of the page to "Edit" to tell user this edits data-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--the headings tell the user this page edits a space booking-->
+<h1>Edit</h1>
+
+<h4>SpaceBooking</h4>
+
+<!--this tag provides spacing between the headings and the form-->
+<hr />
+
+<!--this form takes 33% of the page width and allows for easy changes-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+            <!--this allows validation error messages to be displayed-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--the space booking ID is a hidden input field-->
+            <input type="hidden" asp-for="SpaceBookingId" />
+
+            <!--this form group allows the user to change the customer ID-->
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+
+            <!--this form group allows the user to change the Restaurant ID-->
+            <div class="form-group">
+                <label asp-for="RestaurantId" class="control-label"></label>
+                <select asp-for="RestaurantId" class="form-control" asp-items="ViewBag.RestaurantId"></select>
+                <span asp-validation-for="RestaurantId" class="text-danger"></span>
+            </div>
+
+            <!--this form group allows the user to change the time slot-->
+            <div class="form-group">
+                <label asp-for="TimeSlot" class="control-label"></label>
+                <input asp-for="TimeSlot" class="form-control" />
+                <span asp-validation-for="TimeSlot" class="text-danger"></span>
+            </div>
+
+            <!--this form group saves the changes made to the space booking-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this form group takes the user back to the list-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

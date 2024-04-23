@@ -1,0 +1,62 @@
+﻿<!--connect to the Baked Good model-->
+@model Beanbrew.Models.BakedGood
+
+<!--set the title of the webform to "Edit"-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--these headings below tell the user this webform edits a baked good-->
+<h1>Edit</h1>
+
+<h4>BakedGood</h4>
+
+<!--provide spaces between the headings and the webform-->
+<hr />
+
+<!--this form takes up a third of the page width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <!--put the validation messages at the top of the form-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BakedGoodsId" />
+
+            <!--in this field the user can edit the baked good name-->
+            <div class="form-group">
+                <label asp-for="BakedGoodName" class="control-label"></label>
+                <input asp-for="BakedGoodName" class="form-control" />
+                <span asp-validation-for="BakedGoodName" class="text-danger"></span>
+            </div>
+
+            <!--in this field the user can edit the baked good type-->
+            <div class="form-group">
+                <label asp-for="BakedGoodType" class="control-label"></label>
+                <input asp-for="BakedGoodType" class="form-control" />
+                <span asp-validation-for="BakedGoodType" class="text-danger"></span>
+            </div>
+
+            <!--in this field the user can edit the baked good price-->
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!--this field saves the changes made to the baked good-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this button provides functionality for cancelling changes made easily-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--provide the scripts for validating the changed data in the bakery-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

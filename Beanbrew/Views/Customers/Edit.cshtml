@@ -1,0 +1,61 @@
+﻿@model Beanbrew.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--heading to tell the user this is for editing data-->
+<h1>Edit</h1>
+
+<!--tell the user this form is for the Customer table-->
+<h4>Customer</h4>
+
+<!--indicate the user that this is form section, not head section-->
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <!--validation error message tells user of any invalid data-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--we do have a customer ID but it is hidden for security-->
+            <input type="hidden" asp-for="CustomerId" />
+
+            <!--other than that we have a Bootstrap first name entry form-->
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <!--this form group is a Bootstrap last name entry field-->
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <!--finally, the user can change a customer's date of birth-->
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+
+            <!--this is put in a form group to style spacing in "Save"-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--link that takes the user back to the page displaying customer data-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--render the ValidationScriptsPartial.cshtml page-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

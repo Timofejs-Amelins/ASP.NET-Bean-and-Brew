@@ -1,0 +1,99 @@
+﻿<!--set the title to About-->
+@{
+    ViewData["Title"] = "About";
+}
+
+<!--all the information displayed in About is in body tag for bg colour-->
+<body>
+    <!--put the welcome message in a heading to make the text big-->
+    <h1>
+        Welcome to Bean and Brew About!
+    </h1>
+    <!--the social media links take the user to my social media pages-->
+    <table>
+        <tr>
+            <td>
+                <a href="https://www.facebook.com/tima.amelins.1">
+                    <img src="~/img/facebook.png" width="50%"/>
+                </a>
+            </td>
+            <td>
+                <a href="https://twitter.com/A95573Amelins">
+                    <img src="~/img/twitter.png" width="50%"/>
+                </a>
+            </td>
+            <td>
+                <a href="https://www.youtube.com/channel/UCxRate9u6-rxbZfAxZ4ZjtA">
+                    <img src="~/img/utube.png" width="50%"/>
+                </a>
+            </td>
+        </tr>
+    </table>
+ 
+<!--put the headers, maps and paragraphs about the locations in a table-->
+<table>
+    <!--the headers provide a logical indication of each column-->
+    <tr>
+        <th>
+            Harrogate
+        </th>
+        <th>
+            Knaresborough
+        </th>
+        <th>
+            Leeds
+        </th>
+    </tr>
+    <!--the Google maps for the 3 branches are embedded as iframes-->
+        <tr>
+            <td>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d150111.25737165663!2d-1.6933753241900111!3d53.9941060921552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48794e237175bd01%3A0x3c084fbaadea4ff!2sHarrogate!5e0!3m2!1sen!2suk!4v1709395343362!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </td>
+            <td>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75031.7560605257!2d-1.5513323697487487!3d54.007348228870605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48794c0904d12069%3A0x38a9bbcb87ed3689!2sKnaresborough!5e0!3m2!1sen!2suk!4v1709395389809!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </td>
+            <td>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d301577.5359655567!2d-1.8646706927806642!3d53.80595803667269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48793e4ada64bd99%3A0x51adbafd0213dca9!2sLeeds!5e0!3m2!1sen!2suk!4v1709395420397!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </td>
+        </tr>
+        <!--the paragraphs are in another row to provide organised layout-->
+        <tr>
+            <td>
+                Bean and Brew Harrogate is the cafe situated in Harrogate, a nice town in North Yorkshire that is remarkably close to the promising Yorkshire Dales National Park. Harrogate has a history of having a fashionable spa resort and that heritage stays in the Montpellier Quarter with the Royal Pump Room Museum. Harrogate is near to Leeds, so while building your itinerary of things to do in Yorkshire do not forget to include this nice town in your list.
+            </td>
+            <td>
+                Bean and Brew Knaresborough is a cafe situated in the picturesque market, spa town and civil parish on the river Nidd that is Knaresborough. A fun fact about Knaresborough is that up until August 2023, Knaresborough was in the Harrogate borough, probably because Knaresborough is only 3 miles east of Harrogate - so if you ever visit Harrogate why not take the short drive, or walk to Knaresborough to take a break and enjoy the surrounding countryside and quietness of this town?
+            </td>
+            <td>
+                Bean and Brew Leeds is a cafe in the bustling city of Leeds that is big but has so many things to see and do. Bean and Brew Leeds is also where we base our booking lessons so if you ever book a baking lesson with us you will end up with a city with so many things to see and do. Leeds is in the south bank of the river Aire. Leeds houses the national collection of military equipment. Leeds' Call Lane has bars and live music venues under rail arches, and finally Leeds Kirkgate Market features so many indoor and outdoor stalls, wo why not head over to Leeds, take a break in our humble cafe before indulging in everything Leeds has to offer?
+            </td>
+        </tr>
+    </table>
+    
+    <!--finally there is the information about Bean and Brew for all cafes-->
+    Bean and Brew is a small local chain of cafes
+    and coffee shops based around Harrogate
+    and Leeds. They currently have the following
+    venues and services:
+    <ol>
+        <li>Coffee shops</li>
+        <li>Small local cuisine restaurants</li>
+        <li>Baking lessons</li>
+        <li>Bakery takeaway</li>
+    </ol>
+    Bean and Brew were one of the first
+    companies in the UK to use fair-trade coffee
+    and all organic milk for their products. Each
+    drink is made exactly to your specifications,
+    for a personal service. They also offer their
+    trademarked flavoured coffees, breakfast
+    items such as porridge, small sweet treats,
+    and pressed sandwiches. Recently they’ve also
+    added frappes and fruit smoothies in addition
+    to seasonal treats such as the pumpkin spiced
+    latte (for Halloween) and various assorted
+    baked goods.
+</body>

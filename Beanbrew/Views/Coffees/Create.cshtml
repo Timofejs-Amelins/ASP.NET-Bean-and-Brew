@@ -1,0 +1,52 @@
+﻿<!--uses the Coffee model and controller to enter and submit Coffee data-->
+@model Beanbrew.Models.Coffee
+
+<!--give the page the Create title-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--headings with styles for emphasis inform user they are entering coffee-->
+<h1>Create</h1>
+
+<h4>Coffee</h4>
+
+<!--seperate the headings from the form-->
+<hr />
+<!--take up 33% width, and allow user to enter new validated coffee data-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--show some validation error messages on the top for clarity-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--Coffee name entry field for entering a coffee-->
+            <div class="form-group">
+                <label asp-for="CoffeeName" class="control-label"></label>
+                <input asp-for="CoffeeName" class="form-control" />
+                <span asp-validation-for="CoffeeName" class="text-danger"></span>
+            </div>
+
+            <!--unit price entry field for entering a coffee price to site-->
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+
+            <!--pressing this button inserts the coffee into the database-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--give the user the option to go back if they change their mind-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<!--finally, run validation scripts using JQuery -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

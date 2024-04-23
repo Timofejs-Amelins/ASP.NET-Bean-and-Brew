@@ -1,0 +1,46 @@
+﻿<!--connect to the Restaurant model to access the Restaurant controller-->
+@model Beanbrew.Models.Restaurant
+
+<!--set the title of the page to "Edit"-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!--these headings tell the user this page is for editing a restaurant-->
+<h1>Edit</h1>
+
+<h4>Restaurant</h4>
+
+<!--provide spacing between the heading and form like other webforms-->
+<hr />
+
+<!--the Bootstrap form is programmed to take up 33% of the page width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <!--allow validation error messages to be displayed on top-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--we must access the Restaurant ID but not change the ID-->
+            <input type="hidden" asp-for="RestaurantId" />
+
+            <!--this form-group is where user enters the restaurant name-->
+            <div class="form-group">
+                <label asp-for="RestaurantName" class="control-label"></label>
+                <input asp-for="RestaurantName" class="form-control" />
+                <span asp-validation-for="RestaurantName" class="text-danger"></span>
+            </div>
+
+            <!--this button saves the changes made to the Restaurant name-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--this link takes the user back to see an overview of restaurant data-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

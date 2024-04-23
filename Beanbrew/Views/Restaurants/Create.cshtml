@@ -1,0 +1,43 @@
+﻿<!--connect to the Restaurant model-->
+@model Beanbrew.Models.Restaurant
+
+<!--set the title of the page to "Create"-->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--these headings inform the user this webform creates a restaurant-->
+<h1>Create</h1>
+
+<h4>Restaurant</h4>
+
+<!--you then have the hr tag with spacing between the headings and form-->
+<hr />
+
+<!--you then have the col-md-4 that so the form takes 33% of the width-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--if the restaurant name is invalid, display an error message-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--the single form-group for form design for entering name-->
+            <div class="form-group">
+                <label asp-for="RestaurantName" class="control-label"></label>
+                <input asp-for="RestaurantName" class="form-control" />
+                <span asp-validation-for="RestaurantName" class="text-danger"></span>
+            </div>
+
+            <!--as standard with other forms, the "Create" button exists-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--below the form is the secondary button taking the user to see table-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

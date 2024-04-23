@@ -1,0 +1,62 @@
+﻿<!--use the BakedGoodsOrder model to access the controller to give CRUD-->
+@model Beanbrew.Models.BakedGoodsOrder
+
+<!--set the title of this page to "Create" to inform user this -->
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--these headings further inform the user this page creates an order-->
+<h1>Create</h1>
+
+<h4>BakedGoodsOrder</h4>
+
+<!--this tag seperates the form from the heading to beautify this webform-->
+<hr />
+
+<!--this form uses Bootstrap to use 33% page width like other CRUD forms-->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <!--some error messages due to invalid data will show up here-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--this quantity field can have validation error messages-->
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <!--the baked goods ID is a dropdown menu with one pre-selected-->
+            <div class="form-group">
+                <label asp-for="BakedGoodsId" class="control-label"></label>
+                <select asp-for="BakedGoodsId" class ="form-control" asp-items="ViewBag.BakedGoodsId"></select>
+            </div>
+            <!--the user must also know the customer ID to enter the order-->
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <!--finally we have different hampers for packing the order-->
+            <div class="form-group">
+                <label asp-for="HamperId" class="control-label"></label>
+                <select asp-for="HamperId" class ="form-control" asp-items="ViewBag.HamperId"></select>
+            </div>
+
+            <!--this button submits the baked goods order into the system-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--finally, there is the option for the user to go back to view all data-->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!--we need to import 2 scripts from the page for client side validation-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
